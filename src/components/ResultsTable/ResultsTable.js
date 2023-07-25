@@ -3,7 +3,9 @@
 import React from 'react';
 import './ResultsTable.css';
 
-const ResultsTable = () => {
+const ResultsTable = (props) => {
+	const yearlyResults = props.yearlyResults;
+	console.log("yearlyResults =", yearlyResults);
 	return (
 		<table className="result">
 			<thead>
@@ -23,6 +25,18 @@ const ResultsTable = () => {
 					<td>TOTAL INTEREST GAINED</td>
 					<td>TOTAL INVESTED CAPITAL</td>
 				</tr>
+{ 
+	// for (let i=0; i<yearlyResults.length(); i++) {
+
+	// }
+}
+				{/* <tr>
+					<td>{yearlyResults.year}</td>
+					<td>{yearlyResults.savingsEndOfYear}</td>
+					<td>{yearlyResults.yearlyInterest}</td>
+					<td>{yearlyResults.savingsEndOfYear}</td>
+					<td>{yearlyResults.yearlyContribution}</td>
+				</tr> */}
 			</tbody>
 		</table>
 	);
