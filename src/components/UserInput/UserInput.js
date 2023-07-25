@@ -7,10 +7,10 @@ const UserInput = (props) => {
 	// const [currentSavings, setCurrentSavings] = useState('');
 
 	const initialUserInput = {
-		'current-savings': 1000,
-		'yearly-contribution': 1000,
-		'expected-return': 10,
-		'investment-duration': 12,
+		'current-savings': 10000,
+		'yearly-contribution': 1200,
+		'expected-return': 7,
+		'investment-duration': 10,
 	};
 	const [userInput, setUserInput] = useState(initialUserInput);
 

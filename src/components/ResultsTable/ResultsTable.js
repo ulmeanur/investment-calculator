@@ -4,8 +4,19 @@ import React from 'react';
 import './ResultsTable.css';
 
 const ResultsTable = (props) => {
+
 	const yearlyResults = props.yearlyResults;
-	console.log("yearlyResults =", yearlyResults);
+
+	console.log('yearlyResults =', yearlyResults);
+
+	const formatter = new Intl.NumberFormat('en-US', {
+		style: 'currency',
+		currency: 'USD',
+		minimumFractionDigits: 2,
+		maximumFractionDigits: 2,
+	  });
+	   
+
 	return (
 		<table className="result">
 			<thead>
@@ -25,18 +36,17 @@ const ResultsTable = (props) => {
 					<td>TOTAL INTEREST GAINED</td>
 					<td>TOTAL INVESTED CAPITAL</td>
 				</tr>
-{ 
-	// for (let i=0; i<yearlyResults.length(); i++) {
-
-	// }
-}
-				{/* <tr>
-					<td>{yearlyResults.year}</td>
-					<td>{yearlyResults.savingsEndOfYear}</td>
-					<td>{yearlyResults.yearlyInterest}</td>
-					<td>{yearlyResults.savingsEndOfYear}</td>
-					<td>{yearlyResults.yearlyContribution}</td>
-				</tr> */}
+				{yearlyResults.map((yearData) => {
+					return (
+						<tr key={yearData.year}>
+							<td>{formatter.format(yearData.year)}</td> 
+							<td>{formatter.format(yearData.savingsEndOfYear)}</td> 
+							<td>{formatter.format(yearData.yearlyInterest)}</td> 
+							<td>{formatter.format(yearData.savingsEndOfYear - yearData.initialInvestment - yearData.yearlyContribution * yearData.year)}</td> 
+							<td>{formatter.format(yearData.initialInvestment + yearData.yearlyContribution * yearData.year)}</td> 00
+						</tr>
+					);
+				})}
 			</tbody>
 		</table>
 	);
