@@ -41,7 +41,7 @@ function App() {
 			<UserInput onCalculateInvestment={calculateHandler} />
 
 			{/* Show fallback text if no data is available */}
-			{!yearlyInvestmentData && <p>No investment calculated yet</p>}
+			{!yearlyInvestmentData && <p style={{textAlign: "center"}}>No investment calculated yet</p>}
 
 			{/* Show below table conditionally (only once result data is available) */}
 			

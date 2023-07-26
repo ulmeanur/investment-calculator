@@ -1,7 +1,7 @@
 //Add New Investment
 
 import React from 'react';
-import './ResultsTable.css';
+import classes from './ResultsTable.module.css';
 
 const ResultsTable = (props) => {
 
@@ -18,7 +18,7 @@ const ResultsTable = (props) => {
 	   
 
 	return (
-		<table className="result">
+		<table className={classes.result}>
 			<thead>
 				<tr>
 					<th>Year</th>
@@ -29,13 +29,6 @@ const ResultsTable = (props) => {
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
-					<td>YEAR NUMBER</td>
-					<td>TOTAL SAVINGS END OF YEAR</td>
-					<td>INTEREST GAINED IN YEAR</td>
-					<td>TOTAL INTEREST GAINED</td>
-					<td>TOTAL INVESTED CAPITAL</td>
-				</tr>
 				{yearlyResults.map((yearData) => {
 					return (
 						<tr key={yearData.year}>
@@ -43,7 +36,7 @@ const ResultsTable = (props) => {
 							<td>{formatter.format(yearData.savingsEndOfYear)}</td> 
 							<td>{formatter.format(yearData.yearlyInterest)}</td> 
 							<td>{formatter.format(yearData.savingsEndOfYear - yearData.initialInvestment - yearData.yearlyContribution * yearData.year)}</td> 
-							<td>{formatter.format(yearData.initialInvestment + yearData.yearlyContribution * yearData.year)}</td> 00
+							<td>{formatter.format(yearData.initialInvestment + yearData.yearlyContribution * yearData.year)}</td>
 						</tr>
 					);
 				})}

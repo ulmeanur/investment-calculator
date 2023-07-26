@@ -1,7 +1,7 @@
 //Add New Investment
 
 import React, { useState } from 'react';
-import './UserInput.css';
+import classes from './UserInput.module.css';
 
 const UserInput = (props) => {
 	// const [currentSavings, setCurrentSavings] = useState('');
@@ -37,8 +37,8 @@ const UserInput = (props) => {
 	};
 
 	return (
-		<form onSubmit={onSubmitHandler} className="form">
-			<div className="input-group">
+		<form onSubmit={onSubmitHandler} className={classes.form}>
+			<div className={classes["input-group"]}>
 				<p>
 					<label htmlFor="current-savings">Current Savings ($)</label>
 					<input
@@ -62,7 +62,7 @@ const UserInput = (props) => {
 					/>
 				</p>
 			</div>
-			<div className="input-group">
+			<div className={classes["input-group"]}>
 				<p>
 					<label htmlFor="expected-return">
 						Expected Interest (%, per year)
@@ -88,11 +88,11 @@ const UserInput = (props) => {
 					/>
 				</p>
 			</div>
-			<p className="actions">
-				<button type="reset" className="buttonAlt" onClick={onResetHandler}>
+			<p className={classes["actions"]}>
+				<button type="reset" className={classes["buttonAlt"]} onClick={onResetHandler}>
 					Reset
 				</button>
-				<button type="submit" className="button">
+				<button type="submit" className={classes["button"]}>
 					Calculate
 				</button>
 			</p>
